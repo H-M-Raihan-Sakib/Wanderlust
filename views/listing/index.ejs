@@ -1,0 +1,129 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="filter-wrapper">
+
+    <button class="scroll-btn left" onclick="scrollFilters(-200)">❮</button>
+
+    <div id="filters">
+
+        <a href="/listings" class="filter <%= !category ? 'active' : '' %>">
+            <i class="fa-solid fa-border-all"></i>
+            <p>All</p>
+        </a>
+
+        <a href="/listings?category=trending" class="filter <%= category==='trending' ? 'active' : '' %>">
+            <i class="fa-solid fa-fire"></i>
+            <p>Trending</p>
+        </a>
+
+        <a href="/listings?category=budget" class="filter <%= category==='budget' ? 'active' : '' %>">
+            <i class="fa-brands fa-cash-app"></i>
+            <p>Budget</p>
+        </a>
+
+        <a href="/listings?category=luxury" class="filter <%= category==='luxury' ? 'active' : '' %>">
+            <i class="fa-solid fa-crown"></i>
+            <p>Luxury</p>
+        </a>
+
+        <a href="/listings?category=apartment" class="filter <%= category==='apartment' ? 'active' : '' %>">
+            <i class="fa-solid fa-bed"></i>
+            <p>Rooms</p>
+        </a>
+
+        <a href="/listings?category=iconic" class="filter <%= category==='iconic' ? 'active' : '' %>">
+            <i class="fa-solid fa-mountain-city"></i>
+            <p>Iconic</p>
+        </a>
+
+        <a href="/listings?category=mountain" class="filter <%= category==='mountain' ? 'active' : '' %>">
+            <i class="fa-solid fa-mountain"></i>
+            <p>Mountain</p>
+        </a>
+
+        <a href="/listings?category=castle" class="filter <%= category==='castle' ? 'active' : '' %>">
+            <i class="fa-brands fa-fort-awesome"></i>
+            <p>Castle</p>
+        </a>
+
+        <a href="/listings?category=pools" class="filter <%= category==='pools' ? 'active' : '' %>">
+            <i class="fa-solid fa-person-swimming"></i>
+            <p>Pools</p>
+        </a>
+
+        <a href="/listings?category=camping" class="filter <%= category==='camping' ? 'active' : '' %>">
+            <i class="fa-solid fa-campground"></i>
+            <p>Camping</p>
+        </a>
+
+        <a href="/listings?category=farmhouse" class="filter <%= category==='farmhouse' ? 'active' : '' %>">
+            <i class="fa-regular fa-house"></i>
+            <p>Farm</p>
+        </a>
+
+        <a href="/listings?category=lounge" class="filter <%= category==='lounge' ? 'active' : '' %>">
+            <i class="fa-solid fa-bowl-food"></i>
+            <p>Lounge</p>
+        </a>
+
+        <a href="/listings?category=beach" class="filter <%= category==='beach' ? 'active' : '' %>">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p>Beach</p>
+        </a>
+
+        <a href="/listings?category=houseboat" class="filter <%= category==='houseboat' ? 'active' : '' %>">
+            <i class="fa-solid fa-sailboat"></i>
+            <p>Boat</p>
+        </a>
+
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollFilters(200)">❯</button>
+
+</div>
+
+
+<!-- ===== LISTINGS ===== -->
+<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+    <% for(let listing of allListing){ %>
+        <div class="card listing-card">
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <img src="<%= listing.image.url %>" class="card-img-top" style="height: 20rem;">
+                
+                <div class="card-img-overlay">
+                    <%= listing.description %>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-text">
+                        <b><%= listing.title %></b><br>
+                        <p><i class="fa-solid fa-location-dot"></i><%= listing.location %> <br></p>
+                        &#2547;<%= listing.price.toLocaleString('bn-BD') %> /night
+                        <i class="tax-info"> &nbsp; &nbsp; (15% Tax)= &#2547;<%= (listing.price + (listing.price*0.15)).toLocaleString('bn-BD') %> </i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+
+<!-- ===== JS ===== -->
+<script>
+    function scrollFilters(amount) {
+        document.getElementById("filters").scrollLeft += amount;
+    }
+
+    let taxSwitch = document.getElementById("flexSwitchCheckChecked");
+    taxSwitch.addEventListener("click", ()=>{
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(info of taxInfo){
+            if(info.style.display != "inline"){
+                info.style.display = "inline";
+            }
+            else{
+                 info.style.display = "none";
+            }
+        }
+    });
+</script>

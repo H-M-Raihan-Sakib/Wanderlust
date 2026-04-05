@@ -1,0 +1,205 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+.navbar{
+    height: 5rem;
+}
+.fa-compass{
+    color: red;
+    font-size: 2rem;
+    background-color: #fff;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+.f-info-links a{
+    text-decoration:  none;
+    color: #222222;
+}
+
+.f-info-links a :hover{
+    text-decoration:  underline;
+}
+
+.f-info-links{
+    width: 100%;
+}
+
+.f-info-socials{
+    width: 100%;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+.f-info-socials i {
+    margin-right: 1.1rem;
+}
+
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem ;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 600 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+    color: #222222;
+}
+
+.card-img-overlay{
+    opacity: 0;
+    transition: 1s;
+    margin-left: 0.7rem;
+    margin-right: 0.5rem;
+    
+}
+
+.card-img-overlay:hover{
+    opacity: 0.4;
+    background-color: #fff;
+    transform: scale(1.08);
+}
+
+.show-img{
+    height: 40vh;
+}
+
+#map{
+    height: 500px;
+    width: 100vh;
+}
+
+.tax{
+    background-color: #D3D3D3;
+    border-radius: 1rem;
+}
+
+.filter-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#filters {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 3rem;
+    scroll-behavior: smooth;
+}
+
+#filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filter {
+    min-width: 90px;
+    height: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: black;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+
+    font-size: 0.7rem;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter i {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+
+.filter:hover {
+    transform: translateY(-5px) scale(1.05);
+    opacity: 1;
+    box-shadow:
+        0 0 5px #00f7ff,
+        0 0 10px #00f7ff,
+        0 0 20px #00f7ff;
+}
+
+.filter.active {
+    border: 2px solid #00f7ff;
+    box-shadow:
+        0 0 5px #00f7ff,
+        0 0 15px #00f7ff;
+}
+
+.scroll-btn {
+    position: absolute;
+    z-index: 10;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    font-size: 18px;
+
+    background: white;
+    color: black;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+.scroll-btn:hover {
+    transform: scale(1.1);
+    background: #f1f1f1;
+}
+
+/* Position */
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+.tax-info{
+    display: none;
+}

@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <br> <br>
+        <h3>Create a New Listing</h3>
+        <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" id="title" placeholder="Enter Title" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" name="listing[description]" id="description" placeholder="Enter Description" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload an Image</label>
+            <input type="file" name="listing[image]" id="image" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="listing[category]" id="category" class="form-control" required>
+                <option value="">Select Category</option>
+                <option value="trending">Trending</option>
+                <option value="budget">Budget</option>
+                <option value="luxury">Luxury</option>
+                <option value="apartment">Apartment</option>
+                <option value="iconic">Iconic</option>
+                <option value="mountain">Mountain</option>
+                <option value="castle">Castle</option>
+                <option value="pools">Pools</option>
+                <option value="camping">Camping</option>
+                <option value="farmhouse">Farmhouse</option>
+                <option value="lounge">Lounge</option>
+                <option value="beach">Beach</option>
+                <option value="houseboat">Houseboat</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="listing[price]" id="price" placeholder="Enter Price" class="form-control" required>
+            </div>
+
+            <div class="mb-3 col-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="listing[country]" id="country" placeholder="Enter Country" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" id="location" placeholder="Enter location" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add</button>
+        <br><br>
+    </form>
+    </div>
+</div>
