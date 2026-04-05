@@ -57,5 +57,7 @@ Visit: http://localhost:8080
 * User profiles
 
 ## 👨‍💻 Author
-* H.M.Raihan Sakib
+* H.M. Raihan Sakib
+* LinkedIn : https://www.linkedin.com/in/h-m-raihan-sakib/
+
 
