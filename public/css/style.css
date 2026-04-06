@@ -1,10 +1,16 @@
 body{
     font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.navbar{
-    height: 5rem;
+main {
+    flex: 1;
+    margin-top: 5rem;
 }
+
+
 .fa-compass{
     color: red;
     font-size: 2rem;
@@ -20,8 +26,8 @@ body{
     color: #222222;
 }
 
-.f-info-links a :hover{
-    text-decoration:  underline;
+.f-info-links a:hover {
+    text-decoration: underline;
 }
 
 .f-info-links{
@@ -202,4 +208,21 @@ body{
 
 .tax-info{
     display: none;
+}
+
+
+@media (max-width: 768px) {
+    .navbar form {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .f-info {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .f-info-socials {
+        margin-bottom: 0.5rem;
+    }
 }
