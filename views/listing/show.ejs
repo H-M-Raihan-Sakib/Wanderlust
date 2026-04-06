@@ -84,33 +84,37 @@
         <% if(listing.reviews.length > 0){ %>
         <h4><b>All Reviews</b></h4>
 
-        <div class="row">
-            <% for(let review of listing.reviews){ %>
+            <div class="row">
+    <% for(let review of listing.reviews){ %>
 
-                <div class="card col-5 mb-3 ms-3 p-3">
-                    <div class="card-body">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <div class="card p-3 h-100 review-card">
 
-                        <h5 class="card-title">
-                            <%= review.author.username %>
-                        </h5>
+                <div class="card-body">
 
-                        <!-- STAR DISPLAY -->
-                        <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
+                    <h5 class="card-title">
+                        <%= review.author.username %>
+                    </h5>
 
-                        <p class="card-text"><%= review.comment %></p>
+                    <!-- STAR DISPLAY -->
+                    <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
 
-                        <!-- DELETE REVIEW (AUTHORIZED ONLY) -->
-                        <% if(currUser && currUser._id.equals(review.author._id)) { %>
-                            <form action="/listings/<%=listing._id %>/reviews/<%=review._id%>?_method=DELETE" method="post">
-                                <button class="btn btn-sm btn-dark">Delete</button>
-                            </form>
-                        <% } %>
+                    <p class="card-text"><%= review.comment %></p>
 
-                    </div>
+                    <% if(currUser && currUser._id.equals(review.author._id)) { %>
+                        <form action="/listings/<%=listing._id %>/reviews/<%=review._id%>?_method=DELETE" method="post">
+                            <button class="btn btn-sm btn-dark">Delete</button>
+                        </form>
+                    <% } %>
+
                 </div>
 
-            <% } %>
+            </div>
         </div>
+
+    <% } %>
+</div>
+        
         <% } %>
 
         <div class="col-8 mb-3">
