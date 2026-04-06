@@ -1,56 +1,130 @@
-body{
+/* GLOBAL */
+body {
     font-family: "Plus Jakarta Sans", sans-serif !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+/* MAIN CONTENT (IMPORTANT FOR FOOTER FIX) */
 main {
     flex: 1;
-    margin-top: 5rem;
+    margin-top: 5rem; /* prevents navbar overlap */
 }
 
+/* NAVBAR */
+.navbar {
+    /* removed fixed height for better responsiveness */
+    padding: 0.8rem 1rem;
+}
 
-.fa-compass{
+.fa-compass {
     color: red;
     font-size: 2rem;
     background-color: #fff;
 }
 
-.nav-link{
+.nav-link {
     color: #222222 !important;
 }
 
-.f-info-links a{
-    text-decoration:  none;
-    color: #222222;
-}
-
-.f-info-links a:hover {
-    text-decoration: underline;
-}
-
-.f-info-links{
-    width: 100%;
-}
-
-.f-info-socials{
-    width: 100%;
-    font-size: 1.3rem;
-    margin-right: 1rem;
-}
-.f-info-socials i {
-    margin-right: 1.1rem;
-}
-
-.f-info{
-    height: 8rem;
+/* FOOTER */
+.f-info {
     background-color: #ebebeb;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: space-evenly;
+    align-items: center; /* FIXED (space-evenly was invalid here) */
     text-align: center;
+    padding: 1rem;
+}
+
+.f-info-links {
+    width: 100%;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    margin: 0 0.5rem;
+}
+
+/* FIXED HOVER BUG */
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-socials {
+    width: 100%;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.f-info-brand {
+    margin: 0.5rem 0;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* TABLET */
+@media (max-width: 992px) {
+    main {
+        margin-top: 5rem;
+    }
+
+    .navbar form {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    main {
+        margin-top: 5rem;
+    }
+
+    /* Navbar adjustments */
+    .navbar form {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .navbar form input {
+        width: 100%;
+    }
+
+    .navbar form button {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
+    /* Footer adjustments */
+    .f-info {
+        flex-direction: column;
+    }
+
+    .f-info-socials {
+        margin-bottom: 0.5rem;
+    }
+
+    .f-info-links {
+        margin-top: 0.5rem;
+    }
 }
 
 .listing-card{
@@ -211,18 +285,3 @@ main {
 }
 
 
-@media (max-width: 768px) {
-    .navbar form {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .f-info {
-        height: auto;
-        padding: 1rem;
-    }
-
-    .f-info-socials {
-        margin-bottom: 0.5rem;
-    }
-}
